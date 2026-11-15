@@ -12,9 +12,8 @@ https://github.com/user-attachments/assets/9a3b4882-81cb-4997-bb98-a0a7d2fb9d00
 
 ## Project history
 
-1. **Breadboard (Fall 2024):** originally built as a discrete TTL circuit on a breadboard for the Rutgers Digital Logic Lab.
-2. **QSPICE simulation (Jul 2026):** rebuilt from scratch as a Verilog module in QSPICE to clean up the design and verify the state transitions in simulation. See [`qspice/`](qspice/).
-3. **FPGA hardware (Nov 2026):** ported to an FPGA in Vivado and rewritten in SystemVerilog for a real 100 MHz clock, real buttons, and real LEDs. See [`fpga/`](fpga/).
+1. **QSPICE simulation (Jul 2026):** rebuilt from scratch as a Verilog module in QSPICE to clean up the design and verify the state transitions in simulation. See [`qspice/`](qspice/).
+2. **FPGA hardware (Nov 2026):** ported to an FPGA in Vivado and rewritten in SystemVerilog for a real 100 MHz clock, real buttons, and real LEDs. See [`fpga/`](fpga/).
 
 ## States
 
@@ -81,7 +80,6 @@ Cycle triggered by a walk button press: S0 → S1 → S2 → S3 → S0. On the F
 ### Verification
 
 - **`tick_gen` testbench:** measures the number of cycles between ticks and fails if it isn't exactly N. As a check of the testbench itself, I injected an off-by-one bug (wrapping at `N` instead of `N-1`): with N = 5 the testbench caught it, but with N = 4 it still passed, because the 2-bit counter overflowed back to 0 on its own. Lesson: test with values that aren't powers of 2.
-- **Timing:** meets timing at 100 MHz (WNS = +X.XXX ns). <!-- TODO: fill in WNS from Vivado's Report Timing Summary -->
 
 - **On hardware:** idle state, full walk cycle timings (4 s / 8 s / 4 s), short taps, presses during a cycle, reset mid-cycle, and that both roads are never green or amber at the same time.
 
