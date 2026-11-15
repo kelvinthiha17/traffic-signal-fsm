@@ -2,7 +2,13 @@
 
 A 4-state finite state machine controlling an intersection between a Main Road and a Cross Road, with a pedestrian walk button. The design was first simulated in **QSPICE**, then rewritten in **SystemVerilog** and run on real hardware on an **AMD Spartan-7 FPGA** (RealDigital Boolean board).
 
-<!-- Demo video: drag your MP4 into this README on github.com, right here -->
+**Demo:** pressing walk (BTN0) runs main amber → cross green → cross amber → back to main green.
+
+https://github.com/user-attachments/assets/9a3b4882-81cb-4997-bb98-a0a7d2fb9d00
+
+
+
+
 
 ## Project history
 
