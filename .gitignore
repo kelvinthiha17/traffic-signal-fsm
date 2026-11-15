@@ -1,0 +1,24 @@
+# Vivado generated project folders and files (rebuild from fpga/ sources)
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+*.srcs/
+.Xil/
+*.xpr
+*.jou
+*.log
+*.str
+*.wdb
+*.bit
+*.dcp
+webtalk*
+xsim.dir/
+vivado_pid*.zip
+
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
